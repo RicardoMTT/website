@@ -5,65 +5,80 @@
  */
 
 /* ============================================================
-   1. NAVBAR — scroll y menú mobile
+   1. NAVBAR — scroll, menú mobile y link activo
    ============================================================ */
 (function initNavbar() {
-  const navbar  = document.querySelector('.navbar');
-  const toggle  = document.querySelector('.nav-toggle');
-  const navList = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-link');
+  var navbar   = document.querySelector('.navbar');
+  var toggle   = document.querySelector('.nav-toggle');
+  var navList  = document.querySelector('.nav-links');
+  var navLinks = document.querySelectorAll('.nav-link');
 
-  // Clase scrolled al bajar
-  const onScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  if (!navbar || !toggle || !navList) return;
+
+  /* ---- Clase scrolled ---- */
+  function onScroll() {
+    if (window.scrollY > 20) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
     updateActiveLink();
-  };
-
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // Estado inicial
+  onScroll();
 
-  // Toggle menú mobile
-  toggle?.addEventListener('click', () => {
-    const isOpen = navList.classList.toggle('open');
+  /* ---- Toggle hamburger ---- */
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = navList.classList.toggle('open');
     toggle.classList.toggle('open', isOpen);
-    toggle.setAttribute('aria-expanded', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
-  // Cerrar al hacer click en link (mobile)
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navList.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  /* ---- Cerrar al hacer click en link ---- */
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
   });
 
-  // Cerrar menú al hacer click fuera
-  document.addEventListener('click', (e) => {
-    if (navList.classList.contains('open') &&
-        !navbar.contains(e.target)) {
-      navList.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+  /* ---- Cerrar al hacer click fuera ---- */
+  document.addEventListener('click', function(e) {
+    if (navList.classList.contains('open') && !navbar.contains(e.target)) {
+      closeMenu();
     }
   });
 
-  // Resaltar link activo según sección visible
+  /* ---- Cerrar con Escape ---- */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navList.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  function closeMenu() {
+    navList.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  /* ---- Link activo por scroll ---- */
   function updateActiveLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY  = window.scrollY + window.innerHeight * 0.35;
+    var sections = document.querySelectorAll('section[id]');
+    var scrollY  = window.scrollY + window.innerHeight * 0.35;
 
-    sections.forEach(section => {
-      const top    = section.offsetTop;
-      const height = section.offsetHeight;
-      const id     = section.getAttribute('id');
-      const link   = document.querySelector(`.nav-link[href="#${id}"]`);
-
+    sections.forEach(function(section) {
+      var top    = section.offsetTop;
+      var height = section.offsetHeight;
+      var id     = section.getAttribute('id');
+      var link   = document.querySelector('.nav-link[href="#' + id + '"]');
       if (link) {
-        link.classList.toggle('active', scrollY >= top && scrollY < top + height);
+        if (scrollY >= top && scrollY < top + height) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       }
     });
   }
