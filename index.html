@@ -1,10 +1,490 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi sitio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Backend Developer especializado en Java, Spring Boot, Docker y Azure. Experiencia en banca, seguros y telecomunicaciones." />
+    <meta name="keywords" content="Backend Developer, Java, Spring Boot, Docker, Azure, API REST, Lima, Peru" />
+    <meta name="author" content="Ricardo Tovar" />
+    <meta property="og:title" content="Backend Developer | Java & Spring Boot" />
+    <meta property="og:description" content="Portfolio profesional - Backend Developer con experiencia en Java, Spring Boot, Docker y Azure." />
+    <meta property="og:type" content="website" />
+    <title>Dev Portfolio | Backend Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-<h1>Hola soy Ricardo</h1>
-<p>Hello World</p>
+
+<!-- ========== NAVBAR ========== -->
+<header class="navbar" role="banner">
+    <nav class="nav-container" aria-label="Navegación principal">
+        <a href="#hero" class="nav-logo" aria-label="Inicio">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">dev</span>
+            <span class="logo-bracket">]</span>
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="#about" class="nav-link"><span class="nav-num">01.</span>Sobre mí</a></li>
+            <li><a href="#skills" class="nav-link"><span class="nav-num">02.</span>Skills</a></li>
+            <li><a href="#experience" class="nav-link"><span class="nav-num">03.</span>Experiencia</a></li>
+            <li><a href="#projects" class="nav-link"><span class="nav-num">04.</span>Proyectos</a></li>
+            <li><a href="#contact" class="nav-link"><span class="nav-num">05.</span>Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero" aria-label="Presentación principal">
+        <div class="hero-bg-grid" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <p class="hero-greeting" aria-label="Saludo">
+                <span class="terminal-prompt" aria-hidden="true">$ </span>whoami
+            </p>
+            <h1 class="hero-name">
+                <span class="hero-name-line reveal-up" style="--delay:0.1s">Ricardo Tovar</span>
+            </h1>
+            <h2 class="hero-role reveal-up" style="--delay:0.25s">
+                Backend Developer
+                <span class="cursor-blink" aria-hidden="true">_</span>
+            </h2>
+            <p class="hero-desc reveal-up" style="--delay:0.4s">
+                Construyo APIs robustas, sistemas escalables y soluciones de alto impacto
+                con Java &amp; Spring Boot. Apasionado por el código limpio y las arquitecturas bien diseñadas.
+            </p>
+            <div class="hero-cta reveal-up" style="--delay:0.55s">
+                <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                <a href="#" class="btn btn-secondary" download aria-label="Descargar CV en PDF">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Descargar CV
+                </a>
+            </div>
+            <div class="hero-social reveal-up" style="--delay:0.7s">
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Terminal decorativo -->
+        <div class="hero-terminal reveal-right" style="--delay:0.5s" aria-hidden="true">
+            <div class="terminal-bar">
+                <span class="t-dot red"></span>
+                <span class="t-dot yellow"></span>
+                <span class="t-dot green"></span>
+                <span class="t-title">backend-dev.sh</span>
+            </div>
+            <div class="terminal-body">
+                <pre class="terminal-code" id="terminal-type"></pre>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-arrow" aria-label="Ir a la sección Sobre mí">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="container">
+            <div class="section-label reveal-fade">
+                <span>01. sobre mí</span>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-up">
+                    <h2 id="about-title" class="section-title">Hola, soy <span class="accent">Ricardo Tovar</span></h2>
+                    <p>
+                        Backend Developer con experiencia construyendo sistemas de alto rendimiento en sectores
+                        críticos como <strong>banca, seguros y telecomunicaciones</strong>. Me especializo en
+                        arquitecturas orientadas a servicios, diseño de APIs REST y automatización de
+                        despliegues en la nube.
+                    </p>
+                    <p>
+                        Mi stack principal gira en torno a <span class="tag-inline">Java</span>
+                        y <span class="tag-inline">Spring Boot</span>, complementado con
+                        <span class="tag-inline">Docker</span> y <span class="tag-inline">Azure</span> para
+                        entregas continuas y escalables. Creo firmemente en el código limpio, las pruebas
+                        automatizadas y la documentación como pilares del desarrollo profesional.
+                    </p>
+                    <p>
+                        Cuando no estoy escribiendo código, estoy explorando nuevas tecnologías,
+                        optimizando flujos de trabajo o aprendiendo sobre arquitecturas de microservicios.
+                    </p>
+                </div>
+                <div class="about-stats reveal-up" style="--delay:0.15s">
+                    <div class="stat-card">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Años de experiencia</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">3</span>
+                        <span class="stat-label">Sectores industriales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">10+</span>
+                        <span class="stat-label">Proyectos entregados</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Tests unitarios escritos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="skills section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+            <div class="section-label reveal-fade"><span>02. tech stack</span></div>
+            <h2 id="skills-title" class="section-title reveal-up">Habilidades técnicas</h2>
+            <p class="section-sub reveal-up" style="--delay:0.1s">
+                Tecnologías con las que trabajo día a día para construir sistemas robustos y escalables.
+            </p>
+
+            <div class="skills-grid">
+
+                <!-- Core -->
+                <div class="skill-category reveal-up" style="--delay:0.1s">
+                    <h3 class="skill-cat-title">
+                        <span class="skill-icon" aria-hidden="true">⚙</span> Core
+                    </h3>
+                    <ul class="skill-list" role="list">
+                        <li class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar" role="progressbar" aria-label="Java 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                            <span class="skill-pct">90%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Spring Boot</span>
+                            <div class="skill-bar" role="progressbar" aria-label="Spring Boot 85%" aria-valuenow="85">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                            <span class="skill-pct">85%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">REST APIs</span>
+                            <div class="skill-bar" role="progressbar" aria-label="REST APIs 90%" aria-valuenow="90">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                            <span class="skill-pct">90%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Unit Testing</span>
+                            <div class="skill-bar" role="progressbar" aria-label="Unit Testing 80%" aria-valuenow="80">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DevOps & Cloud -->
+                <div class="skill-category reveal-up" style="--delay:0.2s">
+                    <h3 class="skill-cat-title">
+                        <span class="skill-icon" aria-hidden="true">☁</span> DevOps & Cloud
+                    </h3>
+                    <ul class="skill-list" role="list">
+                        <li class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar" role="progressbar" aria-label="Docker 80%" aria-valuenow="80">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Azure</span>
+                            <div class="skill-bar" role="progressbar" aria-label="Azure 75%" aria-valuenow="75">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                            <span class="skill-pct">75%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <div class="skill-bar" role="progressbar" aria-label="CI/CD 70%" aria-valuenow="70">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                            <span class="skill-pct">70%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category reveal-up" style="--delay:0.3s">
+                    <h3 class="skill-cat-title">
+                        <span class="skill-icon" aria-hidden="true">🛠</span> Tools
+                    </h3>
+                    <div class="tools-tags" role="list">
+                        <span class="tool-tag" role="listitem">Postman</span>
+                        <span class="tool-tag" role="listitem">Git</span>
+                        <span class="tool-tag" role="listitem">Maven</span>
+                        <span class="tool-tag" role="listitem">Gradle</span>
+                        <span class="tool-tag" role="listitem">JUnit</span>
+                        <span class="tool-tag" role="listitem">Mockito</span>
+                        <span class="tool-tag" role="listitem">Swagger</span>
+                        <span class="tool-tag" role="listitem">Hibernate</span>
+                        <span class="tool-tag" role="listitem">SQL</span>
+                        <span class="tool-tag" role="listitem">IntelliJ IDEA</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section class="experience section" id="experience" aria-labelledby="exp-title">
+        <div class="container">
+            <div class="section-label reveal-fade"><span>03. experiencia</span></div>
+            <h2 id="exp-title" class="section-title reveal-up">Trayectoria profesional</h2>
+
+            <div class="timeline" role="list">
+
+                <!-- Job 1 -->
+                <article class="timeline-item reveal-up" style="--delay:0.1s" role="listitem">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Backend Developer</h3>
+                                <p class="timeline-company">Empresa · Sector Banca</p>
+                            </div>
+                            <time class="timeline-date" datetime="2023">2023 – Presente</time>
+                        </div>
+                        <ul class="timeline-bullets" role="list">
+                            <li>Desarrollo de microservicios con Spring Boot para procesamiento de transacciones financieras de alto volumen.</li>
+                            <li>Diseño e implementación de APIs REST consumidas por canales digitales y sistemas core bancarios.</li>
+                            <li>Containerización de servicios con Docker y despliegues automatizados en Azure App Service.</li>
+                            <li>Escritura de pruebas unitarias con JUnit y Mockito alcanzando cobertura &gt;80%.</li>
+                        </ul>
+                        <div class="timeline-tags" aria-label="Tecnologías utilizadas">
+                            <span class="tag">Java 17</span><span class="tag">Spring Boot</span>
+                            <span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">REST</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Job 2 -->
+                <article class="timeline-item reveal-up" style="--delay:0.2s" role="listitem">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Backend Developer</h3>
+                                <p class="timeline-company">Empresa · Sector Seguros</p>
+                            </div>
+                            <time class="timeline-date" datetime="2022">2022 – 2023</time>
+                        </div>
+                        <ul class="timeline-bullets" role="list">
+                            <li>Integración de sistemas de pólizas con APIs externas de cobros y notificaciones.</li>
+                            <li>Desarrollo de módulos de cálculo de primas con lógica de negocio compleja.</li>
+                            <li>Documentación de endpoints con Swagger/OpenAPI y validación con Postman.</li>
+                        </ul>
+                        <div class="timeline-tags" aria-label="Tecnologías utilizadas">
+                            <span class="tag">Java 11</span><span class="tag">Spring Boot</span>
+                            <span class="tag">Postman</span><span class="tag">Swagger</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Job 3 -->
+                <article class="timeline-item reveal-up" style="--delay:0.3s" role="listitem">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Java Developer Jr.</h3>
+                                <p class="timeline-company">Empresa · Sector Telecomunicaciones</p>
+                            </div>
+                            <time class="timeline-date" datetime="2021">2021 – 2022</time>
+                        </div>
+                        <ul class="timeline-bullets" role="list">
+                            <li>Mantenimiento y evolución de aplicaciones de gestión de clientes y facturación.</li>
+                            <li>Consumo de APIs SOAP y REST de sistemas de terceros.</li>
+                            <li>Participación en revisiones de código y mejora de estándares de calidad del equipo.</li>
+                        </ul>
+                        <div class="timeline-tags" aria-label="Tecnologías utilizadas">
+                            <span class="tag">Java 8</span><span class="tag">Spring MVC</span>
+                            <span class="tag">SQL</span><span class="tag">REST</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="projects section" id="projects" aria-labelledby="proj-title">
+        <div class="container">
+            <div class="section-label reveal-fade"><span>04. proyectos</span></div>
+            <h2 id="proj-title" class="section-title reveal-up">Proyectos destacados</h2>
+            <p class="section-sub reveal-up" style="--delay:0.1s">
+                Selección de proyectos técnicos que demuestran mis capacidades como Backend Developer.
+            </p>
+
+            <div class="projects-grid">
+
+                <article class="project-card reveal-up" style="--delay:0.1s">
+                    <div class="project-top">
+                        <div class="project-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">API Gateway Bancario</h3>
+                    <p class="project-desc">
+                        Microservicio Spring Boot que actúa como gateway para gestión de cuentas y
+                        transferencias. Incluye autenticación JWT, rate limiting, logging centralizado
+                        y documentación OpenAPI.
+                    </p>
+                    <div class="project-tags" aria-label="Tecnologías">
+                        <span class="tag">Java 17</span><span class="tag">Spring Boot</span>
+                        <span class="tag">JWT</span><span class="tag">Docker</span><span class="tag">Azure</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" style="--delay:0.2s">
+                    <div class="project-top">
+                        <div class="project-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.47 19.79 19.79 0 01.18 3.15 2 2 0 012.16 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.61-.61a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Notificaciones Multicanal</h3>
+                    <p class="project-desc">
+                        Sistema de notificaciones asíncronas para sector seguros con soporte para
+                        email, SMS y push. Patrón Observer con Spring Events y despliegue en contenedores Docker.
+                    </p>
+                    <div class="project-tags" aria-label="Tecnologías">
+                        <span class="tag">Spring Boot</span><span class="tag">Docker</span>
+                        <span class="tag">REST API</span><span class="tag">Postman</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" style="--delay:0.3s">
+                    <div class="project-top">
+                        <div class="project-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">CRUD REST con Testing</h3>
+                    <p class="project-desc">
+                        API RESTful completa con Spring Boot, JPA/Hibernate y base de datos relacional.
+                        Suite de pruebas unitarias e integración con JUnit 5 y Mockito con 85% de cobertura.
+                    </p>
+                    <div class="project-tags" aria-label="Tecnologías">
+                        <span class="tag">Spring Boot</span><span class="tag">JUnit 5</span>
+                        <span class="tag">Mockito</span><span class="tag">Hibernate</span><span class="tag">SQL</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="projects-footer reveal-up">
+                <a href="https://github.com/RicardoMTT" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    Ver más en GitHub
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="section-label reveal-fade"><span>05. contacto</span></div>
+            <h2 id="contact-title" class="section-title reveal-up">¿Hablamos?</h2>
+            <p class="contact-sub reveal-up" style="--delay:0.1s">
+                Estoy disponible para nuevas oportunidades laborales. Si tienes una posición
+                interesante o simplemente quieres conectar, no dudes en escribirme.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal-up" style="--delay:0.15s">
+                    <a href="mailto:tricardo003@email.com" class="contact-item" aria-label="Enviar email">
+                        <div class="contact-item-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">tricardo003@email.com</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn">
+                        <div class="contact-item-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">linkedin.com/in/ricardo-tovar-868a57122/</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/RicardoMTT" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="GitHub">
+                        <div class="contact-item-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/RicardoMTT</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-cta reveal-up" style="--delay:0.25s">
+                    <div class="contact-card">
+                        <p class="contact-card-text">¿Tienes una oportunidad interesante?</p>
+                        <a href="mailto:tuemail@email.com" class="btn btn-primary btn-lg">
+                            Envíame un mensaje
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                        <a href="#" class="btn btn-secondary" download>Descargar CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <p class="footer-text">
+            Diseñado &amp; construido por <span class="accent">Ricardo Tovar</span>
+            <span class="footer-sep" aria-hidden="true"> · </span>
+            <span class="footer-year" id="footer-year"></span>
+        </p>
+        <p class="footer-sub">Backend Developer · Lima, Perú</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
