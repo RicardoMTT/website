@@ -21,7 +21,7 @@
 
   --text-primary:  #e8eaf0;
   --text-secondary:#8b92a5;
-  --text-muted:    #555b6b;
+  --text-muted:    #a0a8b8;
 
   /* Tipografía */
   --font-mono:  'Space Mono', 'Courier New', monospace;
@@ -992,7 +992,7 @@ ul { list-style: none; }
 .footer-sub {
   font-size: 0.78rem;
   color: var(--text-muted);
-  opacity: 0.6;
+
 }
 
 .footer-sep { opacity: 0.4; }
