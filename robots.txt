@@ -1,3 +1,5 @@
+# Cloudflare: Preserve original robots.txt
+
 User-agent: *
 Allow: /
 
